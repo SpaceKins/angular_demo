@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="js/myApp.js"></script>
 </head>
-<body ng-app>
+<body ng-app = "myApp">
   <h1>
   {{'Hello!' + 'Angular!'}}
   </h1>  
@@ -14,6 +15,12 @@
   {{2+3}}
   </h2>
 
+  <div ng-controller="myController">
+  <h3>{{ myFirstName }}</h3>
+  </div>
+
   <input type ="text" ng-model="myModel">
+
+  <div>{{myModel}}</div>
 </body>
 </html>
