@@ -41,7 +41,16 @@
 
   <div class="value_of_books">
   <b>Books: </b>
-    {{BookService}}
+    <ul>  
+      <li ng-repeat="book in books">
+        <h4 class="book_title">
+          {{book.title}}
+        </h4>
+        <p class="book_author">
+          {{book.author}}
+        </p>
+      <li>
+    </ul>
   </div>
 </body>
 </html>
