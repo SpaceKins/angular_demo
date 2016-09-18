@@ -2,6 +2,8 @@ var express=require('express');
 var path=require('path');
 var app=express();
 
+app.use(express.static(path.resolve(__dirname,'public')));
+
 var port=8080;
 
 var movies=[
@@ -42,8 +44,12 @@ app.get('/api/movies',function(req,res){
   res.json(movies);
 })
 
+app.get('*',function(req,res){
+  res.sendFile(`${__dirname}/public/index.html`);
+})
 
-app.use(express.static(path.resolve(__dirname,'public')));
+
+
 
 app.listen(port,function(){
   console.log('Listening on ' + port);

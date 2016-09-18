@@ -3,23 +3,13 @@ angular.module('myApp')
     '$scope',
     'mainCharacter',
     'CharacterVersionFactory',
-    'BookService',
-    'Movies',
-    function($scope,mainCharacter,CharacterVersionFactory,BookService,Movies) {
+    function($scope,mainCharacter,CharacterVersionFactory) {
     //console.log(CharacterVersionFactory);  
     $scope.myFirstName='Steven Me';
     $scope.myModel ='Ready Player One';
     $scope.mainCharacter =mainCharacter;
     $scope.characterVersion=CharacterVersionFactory;
-    $scope.BookService=BookService;
 
-    $scope.movies=[];
-    
-    Movies.getMovies()
-    .success((movies)=>{
-      console.log(movies);
-      $scope.movies=movies;
-    });
   }])
   .controller('bookController',[
     '$scope',
