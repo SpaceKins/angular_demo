@@ -10,11 +10,11 @@ angular.module('myApp')
     $scope.myModel ='Ready Player One';
     $scope.mainCharacter =mainCharacter;
     $scope.characterVersion=CharacterVersionFactory;
-    $scope.books=BookService.getBooks();
-
-    console.log(BookService.getBooks());
-
-    console.log(BookService.getBook(2));
+    $scope.BookService=BookService;
+    //$scope.books=BookService.getBooks();
+    console.log(BookService);
+    //console.log(BookService.getBooks());
+    //console.log(BookService.getBook(2));
     
   //  console.log(service instanceof BookService);
   }])
