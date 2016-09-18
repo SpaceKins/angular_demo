@@ -77,7 +77,7 @@
       <b>Movies:</b>
     <ul>  
     <!-- filter arguments are separate by :, the first argument is the interated object -->
-      <li ng-repeat="movie in movies | beforeYearfilter: 1983 :'hello' | filter: {title:'Star'}">
+      <li ng-repeat="movie in movies | beforeYearfilter: 1983 :'hello'"> <!--  | filter: {title:'Star'}  -->
         <h4 class="movie_title">
           {{movie.title}}
         </h4>
