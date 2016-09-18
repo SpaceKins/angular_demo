@@ -62,8 +62,15 @@
 
 
   <b>Books:</b>
+    <div>
+    <label>
+      Find Book
+      <input type="search" name="bookTitle" ng-model="bookTitlefilterValue" placeholder="Find Book">
+      </label>
+    </div>
+    {{bookTitlefilterValue}}
     <ul>  
-      <li ng-repeat="book in BookService.books">
+      <li ng-repeat="book in BookService.books | filter: {title:bookTitlefilterValue}">
         <h4 class="book_title">
           {{book.title}}
         </h4>
