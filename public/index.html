@@ -8,6 +8,7 @@
   <script type="text/javascript" src="js/controller.js"></script>
   <script type="text/javascript" src="js/values.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>
+    <script type="text/javascript" src="js/factories.js"></script>
 </head>
 <body ng-app = "myApp"  ng-controller="myController">
   <h1>
@@ -29,6 +30,11 @@
 
 
   <div>{{mainCharacter}}</div>
+
+  <div class="value_of_character_version">
+    <b>Character Version:</b>
+    {{characterVersion}}
+  </div>
 
   <h3>{{APP_VERSION}}</h3><h4>
 </body>
