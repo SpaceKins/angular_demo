@@ -20,15 +20,26 @@ angular.module('myApp')
       console.log(movies);
       $scope.movies=movies;
     });
-    
-    //$scope.books=BookService.getBooks();
-    console.log(BookService);
-    //console.log(BookService.getBooks());
-    //console.log(BookService.getBook(2));
-    
-  //  console.log(service instanceof BookService);
+  }])
+  .controller('bookController',[
+    '$scope',
+    'BookService',
+    function($scope,BookService) {
+    $scope.BookService=BookService;
   }])
 
+  .controller('movieController',[
+    '$scope',
+    'Movies',
+    function($scope,Movies) {
+    $scope.movies=[];
+    
+    Movies.getMovies()
+    .success((movies)=>{
+      console.log(movies);
+      $scope.movies=movies;
+    });
+  }])
   /********** Chaining is allowed *************
     .controller('myController',['$scope',function($scope){
     $scope.myFirstName='Steven Me';

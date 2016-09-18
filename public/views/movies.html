@@ -1,0 +1,12 @@
+<b>Movies:</b>
+<ul>  
+<!-- filter arguments are separate by :, the first argument is the interated object -->
+  <li ng-repeat="movie in movies | beforeYearfilter: 1983 :'hello' | orderBy: '-year'"> <!--  | filter: {title:'Star'}  -->
+    <h4 class="movie_title">
+      {{movie.title}}
+    </h4>
+    <p class="movie_year">
+      {{movie.year}}
+    </p>
+  <li>
+</ul>
