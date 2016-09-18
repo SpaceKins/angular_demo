@@ -10,6 +10,8 @@
   <script type="text/javascript" src="js/constants.js"></script>
   <script type="text/javascript" src="js/factories.js"></script>
   <script type="text/javascript" src="js/services.js"></script>
+  <script type="text/javascript" src="js/providers.js"></script>
+  <script type="text/javascript" src="js/filters.js"></script>
 </head>
 <body ng-app = "myApp"  ng-controller="myController">
   <h1>
@@ -54,7 +56,8 @@
       ng-model="title">
     </label>
 
-    <button ng-click="BookService.addBook({title:title,author:author})" class="addBook">Add Book</button>
+    <button ng-click="BookService.addBook({title:title,author:author});
+      title='';author=''" class="addBook">Add Book</button>
   </div>
 
 
@@ -66,6 +69,20 @@
         </h4>
         <p class="book_author">
           {{book.author}}
+        </p>
+      <li>
+    </ul>
+
+
+      <b>Movies:</b>
+    <ul>  
+    <!-- filter arguments are separate by :, the first argument is the interated object -->
+      <li ng-repeat="movie in movies | beforeYearfilter: 1983 :'hello' | filter: {title:'Star'}">
+        <h4 class="movie_title">
+          {{movie.title}}
+        </h4>
+        <p class="movie_year">
+          {{movie.year}}
         </p>
       <li>
     </ul>
