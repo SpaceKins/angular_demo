@@ -5,8 +5,10 @@
   <title>Document</title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script type="text/javascript" src="js/myApp.js"></script>
+  <script type="text/javascript" src="js/controller.js"></script>
+  <script type="text/javascript" src="js/values.js"></script>
 </head>
-<body ng-app = "myApp">
+<body ng-app = "myApp"  ng-controller="myController">
   <h1>
   {{'Hello!' + 'Angular!'}}
   </h1>  
@@ -15,12 +17,16 @@
   {{2+3}}
   </h2>
 
-  <div ng-controller="myController">
+  <div>
   <h3>{{ myFirstName }}</h3>
+  <!--<div>{{myModel}}</div> -->
   </div>
 
   <input type ="text" ng-model="myModel">
 
   <div>{{myModel}}</div>
+
+
+  <div>{{mainCharacter}}</div>
 </body>
 </html>
